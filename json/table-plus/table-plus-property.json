@@ -1,0 +1,101 @@
+{
+  "code":200,
+  "data":[
+    {
+      "property-name":"api",
+      "property-description":"请求数据的接口函数",
+      "property-type":"function",
+      "property-select":"—",
+      "property-default":"—",
+      "property-must":"是"
+    },
+    {
+      "property-name":"columns",
+      "property-description":"渲染表头的数组",
+      "property-type":"array",
+      "property-select":"—",
+      "property-default":"[]",
+      "property-must":"是"
+    },
+    {
+      "property-name":"description",
+      "property-description":"对于表格的说明",
+      "property-type":"string",
+      "property-select":"—",
+      "property-default":"表格组件",
+      "property-must":"否"
+    },
+    {
+      "property-name":"type",
+      "property-description":"表格类型",
+      "property-type":"string",
+      "property-select":"v1 / v2 / v1-tree / v2-tree ",
+      "property-default":"v1",
+      "property-must":"否"
+    },
+    {
+      "property-name":"isLazy",
+      "property-description":"是否需要懒加载数据(仅当type为'v1-tree' 或 'v2-tree'时生效)",
+      "property-type":"boolean",
+      "property-select":"true / false",
+      "property-default":"false",
+      "property-must":"否"
+    },
+    {
+      "property-name":"isPage",
+      "property-description":"是否需要分页组件(如果需要分页组件，则请求数据中一定要有总数)",
+      "property-type":"boolean",
+      "property-select":"true / false",
+      "property-default":"true",
+      "property-must":"否"
+    },
+    {
+      "property-name":"isIndex",
+      "property-description":"是否需要序号列",
+      "property-type":"boolean",
+      "property-select":"true / false",
+      "property-default":"false",
+      "property-must":"否"
+    },
+    {
+      "property-name":"isSelection",
+      "property-description":"是否需要复选框组件",
+      "property-type":"boolean",
+      "property-select":"true / false",
+      "property-default":"false",
+      "property-must":"否"
+    },
+    {
+      "property-name":"isEdit",
+      "property-description":"单元格是否可编辑",
+      "property-type":"boolean",
+      "property-select":"true / false",
+      "property-default":"false",
+      "property-must":"否"
+    },
+    {
+      "property-name":"isExpand",
+      "property-description":"是否需要展开列",
+      "property-type":"boolean",
+      "property-select":"true / false",
+      "property-default":"false",
+      "property-must":"否"
+    },
+    {
+      "property-name":"query",
+      "property-description":"额外的请求参数(其实如果是静态数据，可以在api函数内写，这里是考虑到动态值而设计的)",
+      "property-type":"object",
+      "property-select":"—",
+      "property-default":"—",
+      "property-must":"否"
+    },
+    {
+      "property-name":"prop",
+      "property-description":"配置选项，具体见下表",
+      "property-type":"object",
+      "property-select":"—",
+      "property-default":"—",
+      "property-must":"否"
+    }
+  ]
+}

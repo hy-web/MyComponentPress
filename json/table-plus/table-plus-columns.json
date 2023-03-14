@@ -1,0 +1,182 @@
+{
+  "code":200,
+  "data":[
+    {
+      "id":"1",
+      "columns-name":"title",
+      "columns-description":"显示的标题",
+      "columns-type":"string",
+      "columns-select":"—",
+      "columns-default":"—"
+    },
+    {
+      "id":"2",
+      "columns-name":"dataKey",
+      "columns-description":"对应列内容的字段名",
+      "columns-type":"string",
+      "columns-select":"—",
+      "columns-default":"—"
+    },
+    {
+      "id":"3",
+      "columns-name":"align",
+      "columns-description":"对齐方式",
+      "columns-type":"string",
+      "columns-select":"left / center / right",
+      "columns-default":"left"
+    },
+    {
+      "id":"4",
+      "columns-name":"header-align",
+      "columns-description":"表头对齐方式(若不设置,则于align值相同)",
+      "columns-type":"string",
+      "columns-select":"left / center / right",
+      "columns-default":"—"
+    },
+    {
+      "id":"5",
+      "columns-name":"customize",
+      "columns-description":"自定义或特殊单元格",
+      "columns-type":"object / array / function",
+      "columns-select":"—",
+      "columns-default":"—",
+      "children": [
+        {
+          "id":"5-1",
+          "columns-name":"object",
+          "columns-description":"常用特殊单元格",
+          "columns-type":"{ type:'' }",
+          "columns-default":"—",
+          "children": [
+            {
+              "id":"5-1-1",
+              "columns-name":"switch",
+              "columns-description":"开关",
+              "columns-type":"{ type:'switch' }",
+              "columns-default":"—"
+            },
+            {
+              "id":"5-1-2",
+              "columns-name":"dict",
+              "columns-description":"数据转换标签",
+              "columns-type":"{ type:'dict', data:{} }",
+              "columns-default":"—"
+            },
+            {
+              "id":"5-1-3",
+              "columns-name":"html",
+              "columns-description":"HTML标签",
+              "columns-type":"{ type:'html', dom:'' }",
+              "columns-default":"—"
+            }
+          ]
+        },
+        {
+          "id":"5-2",
+          "columns-name":"array",
+          "columns-description":"数组按钮单元格",
+          "columns-type":"—",
+          "columns-default":"—",
+          "children": [
+            {
+              "id":"5-2-1",
+              "columns-name":"name",
+              "columns-description":"按钮名称",
+              "columns-type":"string",
+              "columns-default":"—"
+            },
+            {
+              "id":"5-2-2",
+              "columns-name":"click",
+              "columns-description":"按钮触发事件",
+              "columns-type":"function",
+              "columns-default":"—"
+            },
+            {
+              "id":"5-2-3",
+              "columns-name":"vif",
+              "columns-description":"按钮展示条件",
+              "columns-type":"function",
+              "columns-default":"—"
+            }
+          ]
+        },
+        {
+          "id":"5-3",
+          "columns-name":"function",
+          "columns-description":"完全自定义单元格(使用此方法时，需要lang=jsx或tsx)",
+          "columns-type":"—",
+          "columns-default":"—"
+        }
+      ]
+    },
+    {
+      "id":"6",
+      "columns-name":"width",
+      "columns-description":"对应列的宽度",
+      "columns-type":"string / number",
+      "columns-select":"—",
+      "columns-default":"—"
+    },
+    {
+      "id":"7",
+      "columns-name":"isSearch",
+      "columns-description":"是否需要启用该列的查询表单组件",
+      "columns-type":"boolean / object",
+      "columns-select":"{ type: -- }",
+      "columns-default":"{ type: input }",
+      "children": [
+        {
+          "id":"7-1",
+          "columns-name":"input",
+          "columns-description":"输入框",
+          "columns-type":"object",
+          "columns-select":"—",
+          "columns-default":"—"
+        },
+        {
+          "id":"7-2",
+          "columns-name":"select",
+          "columns-description":"下拉框",
+          "columns-type":"object",
+          "columns-select":"—",
+          "columns-default":"—"
+        },
+        {
+          "id":"7-3",
+          "columns-name":"date",
+          "columns-description":"时间日期选择器",
+          "columns-type":"object",
+          "columns-select":"{ options: --}",
+          "columns-default":"—",
+          "children": [
+            {
+              "id":"7-3-1",
+              "columns-name":"type",
+              "columns-description":"组件类型",
+              "columns-type":"object",
+              "columns-select":"year/month/date/dates/datetime/ week/datetimerange/daterange/ monthrange",
+              "columns-default":"date(年月日)"
+            },
+            {
+              "id":"7-3-1",
+              "columns-name":"valueFormat",
+              "columns-description":"日期格式",
+              "columns-type":"object",
+              "columns-select":"—",
+              "columns-default":"YYYY-MM-DD"
+            }
+          ]
+        },
+        {
+          "id":"7-4",
+          "columns-name":"cascader",
+          "columns-description":"级联选择器",
+          "columns-type":"object",
+          "columns-select":"—",
+          "columns-default":"—"
+        }
+      ]
+    }
+  ]
+}
