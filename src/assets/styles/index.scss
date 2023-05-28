@@ -1,0 +1,353 @@
+// 全局公共样式scss文件
+
+// 导入element-plus黑暗主题样式
+@use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
+
+:root {
+	--color-light-darker: #f0f2f5;
+	--color-dark-darker: #1f1f1f;
+}
+
+html, .el-dialog {
+	min-width: 360px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.h-max {
+	height: 100% !important;
+}
+
+.w-max {
+	width: 100% !important;
+}
+
+// 错误色字体颜色
+.color-danger {
+  color: var(--el-color-danger);
+}
+
+// 手指光标
+.finger {
+	cursor: pointer
+}
+
+// 文本垂直居中
+.center {
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-align {
+	align-items: center;
+}
+
+// flex水平居中
+.flex-justify-content {
+	justify-content: center;
+}
+
+.flex-x-y {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-space-between {
+	justify-content: space-between;
+}
+
+.relative {
+	position: relative;
+}
+
+// 文本超出显示省略号
+.text-overflow {
+	// width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// 强制文本不换行
+.text-nowrap{
+	white-space: nowrap;
+}
+
+// elementPlus滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0003;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background-color: #0000004d;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #fff3;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #fff6;
+}
+
+/*
+@使用媒体查询设置系统进入何种模式
+*/
+// 进入PC模式
+@media screen and (min-width: 1200px) {
+
+	// 显示全功能分页组件，隐藏极简分页组件
+	.MobileStyle {
+		display: none !important;
+	}
+
+	// 登录页表单容器样式
+	.desktop--LoginBox {
+		$desktop--LoginBox-h:60px;
+		$desktop--LoginBox-min-h:460px;
+		float: right;
+		min: {
+      width: 530px;
+      height: $desktop--LoginBox-min-h;
+    }
+		.el-tabs__item {
+			line-height: $desktop--LoginBox-h;
+			height: $desktop--LoginBox-h;
+		}
+		.desktop--QRcode {
+			height: calc($desktop--LoginBox-min-h - $desktop--LoginBox-h);
+		}
+	}
+}
+
+// 进入平板模式
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+
+	// 隐藏侧边栏
+	.el-aside,
+	// 隐藏全功能分页组件，展示极简分页组件
+	.PCStyle {
+		display: none !important;
+		transform: translate(-100%);
+	}
+
+	// 侧边栏展开样式
+	.el-aside.open {
+		display: block !important;
+		transform: translate(0);
+		width: 300px;
+		position: fixed;
+		top: 0;
+		z-index: 3;
+		height: 100vh !important;
+		background: var(--el-color-primary-light-9);
+	}
+
+	.el-menu--vertical {
+		height: 100vh !important;
+	}
+
+	.overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, .6);
+		transition: opacity .5s;
+		z-index: 2;
+	}
+
+	// 登录页表单容器样式
+	.tablet--LoginBox {
+		$tablet--LoginBox-h:60px;
+		$tablet--LoginBox-min-h:400px;
+		float: right;
+		height: 50vh;
+		min: {
+      width: 530px;
+    }
+		.el-tabs__item {
+			line-height: $tablet--LoginBox-h;
+			height: $tablet--LoginBox-h;
+		}
+		.tablet--QRcode {
+			height: calc($tablet--LoginBox-min-h - $tablet--LoginBox-h);
+		}
+	}
+}
+
+// 进入手机模式
+@media screen and (max-width: 768px) {
+
+	// 隐藏侧边栏
+	.el-aside,
+	// 隐藏全功能分页组件，展示极简分页组件
+	.PCStyle {
+		display: none !important;
+		transform: translate(-100%);
+	}
+
+	// 侧边栏展开样式
+	.el-aside.open {
+		display: block !important;
+		transform: translate(0);
+		width: 300px;
+		position: fixed;
+		top: 0;
+		z-index: 3;
+		height: 100vh !important;
+		background: var(--el-color-primary-light-9);
+	}
+
+	.el-menu--vertical {
+		height: 100vh !important;
+	}
+
+	.overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, .6);
+		transition: opacity .5s;
+		z-index: 2;
+	}
+
+	.mobile--Font-size {
+		font-size: 12px;
+	}
+
+	.mobile--Flex-x-y {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mobile--Logo {
+		width: 100%;
+    min-height: 100%;
+		max-height: 10vh;
+	}
+
+	.mobile--LoginBox {
+		height: 55vh;
+	}
+
+	.mobile--QRcode {
+		height: calc(50vh + 5px);
+	}
+}
+
+// 定义一个固定高度的容器，历遍1-100
+@for $i from 1 through 100 {
+	.h-#{$i}vh {
+		height: $i + vh;
+		overflow: auto;
+	}
+}
+
+// 定义内外边距，历遍0-100
+@for $i from 0 through 100 {
+
+	// 只要双数和能被5除尽的数
+	@if $i % 2==0 or $i % 5==0 {
+
+		// 得出：u-margin-30或者u-m-30
+		.margin-#{$i},
+		.m-#{$i} {
+			margin: $i + px !important;
+		}
+
+		.m-x-#{$i} {
+			margin-left: $i + px !important;
+			margin-right: $i + px !important;
+		}
+
+		.m-y-#{$i} {
+			margin-top: $i + px !important;
+			margin-bottom: $i + px !important;
+		}
+
+		// 得出：u-padding-30或者u-p-30
+		.padding-#{$i},
+		.p-#{$i} {
+			padding: $i + px !important;
+		}
+
+		.p-x-#{$i} {
+			padding-left: $i + px !important;
+			padding-right: $i + px !important;
+		}
+
+		.p-y-#{$i} {
+			padding-top: $i + px !important;
+			padding-bottom: $i + px !important;
+		}
+
+		@each $short,
+		$long in l left,
+		t top,
+		r right,
+		b bottom {
+
+			// 缩写版，结果如： u-m-l-30
+			// 定义外边距
+			.m-#{$short}-#{$i} {
+				margin-#{$long}: $i + px !important;
+			}
+
+			// 定义内边距
+			.p-#{$short}-#{$i} {
+				padding-#{$long}: $i + px !important;
+			}
+
+			// 完整版，结果如：u-margin-left-30
+			// 定义外边距
+			.margin-#{$long}-#{$i} {
+				margin-#{$long}: $i + px !important;
+			}
+
+			// 定义内边距
+			.padding-#{$long}-#{$i} {
+				padding-#{$long}: $i + px !important;
+			}
+		}
+	}
+}
